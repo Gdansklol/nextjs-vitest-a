@@ -38,5 +38,30 @@ npm install -D vitest
 
 - npm run test
 
+## 3. När du bara vill testa en del under utvecklingen
+ex )
+
+```bash
+npm run test src/functions/check-is-two.spec.ts:4
+```
+
+## Använda Inkludera och Exkludera i Vitest
+
+- skapa vitest.config.ts file
+```ts
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  test: {
+    include: [
+        // '**\/*.{test,spec}.?(c|m)[jt]s?(x)',
+        '**/check-is-two.spec.ts',
+    ],
+  },
+})
+```
+
+- eller 
+### install Vitest extention 
 
 
